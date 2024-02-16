@@ -1,0 +1,102 @@
+{
+  "Title": "Recycling Simulator",
+  "Type": "game",
+  "Org": "bakjeinc",
+  "Ident": "recyclingsimulator",
+  "Tags": "recycling simulator realistic trash garbage green",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "Resources": null,
+  "MenuResources": "*",
+  "HasCode": true,
+  "CodePath": "/code/",
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "Metadata": {
+    "MaxPlayers": 64,
+    "MinPlayers": 1,
+    "TickRate": 50,
+    "GameNetworkType": "Multiplayer",
+    "MapSelect": "Unrestricted",
+    "MapList": [
+      "facepunch.flatgrass"
+    ],
+    "RankType": "None",
+    "PerMapRanking": false,
+    "LeaderboardType": "None",
+    "CsProjName": "",
+    "StartupScene": "scenes/minimal.scene",
+    "ProjectTemplate": null,
+    "ControlModes": {
+      "Keyboard": true
+    },
+    "InputSettings": {
+      "Actions": [
+        {
+          "Name": "Forward",
+          "KeyboardCode": "W",
+          "GroupName": "Movement"
+        },
+        {
+          "Name": "Backward",
+          "KeyboardCode": "S",
+          "GroupName": "Movement"
+        },
+        {
+          "Name": "Left",
+          "KeyboardCode": "A",
+          "GroupName": "Movement"
+        },
+        {
+          "Name": "Right",
+          "KeyboardCode": "D",
+          "GroupName": "Movement"
+        },
+        {
+          "Name": "Jump",
+          "KeyboardCode": "space",
+          "GroupName": "Movement"
+        },
+        {
+          "Name": "Grab",
+          "KeyboardCode": "mouse1",
+          "GroupName": "Actions"
+        },
+        {
+          "Name": "Attack2",
+          "KeyboardCode": "mouse2",
+          "GroupName": "Actions"
+        },
+        {
+          "Name": "Use",
+          "KeyboardCode": "e",
+          "GroupName": "Actions"
+        },
+        {
+          "Name": "Walk",
+          "KeyboardCode": "ALT",
+          "GroupName": "Movement"
+        },
+        {
+          "Name": "Use2",
+          "KeyboardCode": "F",
+          "GroupName": "Actions"
+        }
+      ]
+    },
+    "Compiler": {
+      "RootNamespace": "Sandbox",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;",
+      "WarningsAsErrors": "",
+      "ReleaseMode": "Release",
+      "AssemblyReferences": [],
+      "IgnoreFolders": [
+        "editor",
+        "unittest"
+      ],
+      "DistinctAssemblyReferences": []
+    }
+  }
+}

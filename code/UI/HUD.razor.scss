@@ -1,0 +1,30 @@
+HUD {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: "Roboto Mono";
+
+	> .crosshair {
+		position: absolute;
+		bottom: 50%;
+		left: 50%;
+		width: 5px;
+		height: 5px;
+		background-color: white;
+		transform: translate(-50%, -50%);
+		border-radius: 20px;
+	}
+
+	> .info {
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+		font-family: "Roboto Mono";
+		font-weight: bolder;
+		color: white;
+		text-stroke: 3px black;
+		font-size: 40px;
+	}
+}

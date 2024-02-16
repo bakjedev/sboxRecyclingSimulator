@@ -1,0 +1,77 @@
+{
+  "RootObject": {
+    "Id": "78252e8b-2bf4-43fd-9807-5018e341ed21",
+    "Name": "GarbageContainer",
+    "Position": "-198.2801,63.48455,-106.2805",
+    "Scale": "4,4,4",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "BoxCollider",
+        "Center": "0,0,5.5",
+        "IsTrigger": true,
+        "Scale": "18.5,30.1,9",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "Container",
+        "containerTeam": "Garbage"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "e464e143-6185-4fb2-bcde-b25d07bd2192",
+        "Name": "Nametag",
+        "Position": "10.31999,0,4.320005",
+        "Scale": "0.2,0.2,0.2",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "WorldPanel",
+            "HorizontalAlign": "Center",
+            "LookAtCamera": false,
+            "PanelSize": "3000,1024",
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "DescriptorTag",
+            "Value": "Garbage"
+          }
+        ]
+      },
+      {
+        "Id": "cc41d8db-a35d-44e8-8719-c83091277035",
+        "Name": "Model",
+        "Position": "0,0,0",
+        "Tags": "crate",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/props/trim_sheets/crate/wooden_crate/wooden_crate_01.vmdl",
+            "RenderType": "On",
+            "Tint": "0.31326,0.31326,0.31326,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "IsTrigger": false,
+            "Model": "models/props/trim_sheets/crate/wooden_crate/wooden_crate_01.vmdl",
+            "Static": false,
+            "Surface": null
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.wooden_crate_01"
+  ]
+}

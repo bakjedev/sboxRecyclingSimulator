@@ -1,0 +1,95 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root class="@(InMenu ? "" : "hide")">
+	<div class="window">
+		<nav>
+			<ul>
+				<li onclick="@( () => SetPage( "Shop" ) )">Shop</li>
+				<li onclick="@( () => SetPage( "Upgrades" ) )">Upgrades</li>
+				<li onclick="@( () => SetPage( "Info" ) )">Info</li>
+			</ul>
+		</nav>
+		<div class="pages">
+			@if (page == "Shop")
+			{
+				<p class="title">Welcome to the shop</p>
+				<div class="shop">
+					
+				</div>
+			}
+			else if (page == "Upgrades")
+			{
+				<p class="title">Upgrades currently do nothing</p>
+				<div class="upgrades">
+					@foreach(GameObject obj in EconomyManager.Objects)
+					{
+						var containerObj = obj.Components.Get<Container>();
+						if (containerObj is null) break;
+
+						<div class="item">
+							<span class="name">@obj.Name @containerObj.level</span>
+							<span class="price">💶@containerObj.upgradeCost.ToString("0.00")</span>
+							<span class="button" onclick="@( () => UpgradeContainer( containerObj ) )">Upgrade</span>
+						</div>
+					}
+				</div>
+			}
+			else if (page == "Info")
+			{
+				<p class="title">Info on the game currently</p>
+				<div class="info">
+					<p>
+						Welcome to recycling simulator!
+					</p>
+					<p>
+						The game (right now) is very simple. Basically, you press the spawn button, you put all the objects it spawns into the
+						right recycling container, then you press the sell button and for each correctly recycled object you earn some money
+						depending on the object's worth.
+					</p>
+					<p>
+						Soon you will be able to buy more containers, upgrade current ones and much more.
+					</p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p>bakje 2024</p>
+				</div>
+			}
+		</div>
+	</div>
+</root>
+
+@code
+{
+	public bool InMenu { get; set; } = false;
+
+	[Property]
+	public EconomyManager EconomyManager {get; set;}
+
+	private string page = "Shop";
+
+	private void SetPage(string value) {
+		page = value;
+	}
+
+	protected override void OnUpdate() {
+		if (Input.EscapePressed) {
+			InMenu= false;
+		}
+	}
+
+	private void UpgradeContainer(Container container) {
+		if (EconomyManager.money >= container.upgradeCost) {
+			EconomyManager.money -= container.upgradeCost;
+			container.Upgrade();
+		}
+	}
+
+
+	protected override int BuildHash() => System.HashCode.Combine(InMenu, EconomyManager.Objects, EconomyManager.money);
+}

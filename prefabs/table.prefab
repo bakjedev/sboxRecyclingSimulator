@@ -1,0 +1,92 @@
+{
+  "RootObject": {
+    "Id": "21152db4-5dce-42a2-9455-431e8a9c344e",
+    "Name": "table",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Info",
+        "Economy": {
+          "_type": "component",
+          "go": "21152db4-5dce-42a2-9455-431e8a9c344e",
+          "component_type": "Economy"
+        },
+        "Grabbable": {
+          "_type": "component",
+          "go": "21152db4-5dce-42a2-9455-431e8a9c344e",
+          "component_type": "Grabbable"
+        },
+        "Mortal": null,
+        "Team": "Wood"
+      },
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/items/victorian_set/victorian_table.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "ModelCollider",
+        "IsTrigger": false,
+        "Model": "models/items/victorian_set/victorian_table.vmdl",
+        "Static": false,
+        "Surface": "surfaces/wood.surface"
+      },
+      {
+        "__type": "Grabbable",
+        "Grabbing": true,
+        "Tooltip": "Table"
+      },
+      {
+        "__type": "Economy",
+        "price": 5.4
+      }
+    ],
+    "Children": [
+      {
+        "Id": "9b9f8d12-eabf-49b5-9774-ba3e7576bd10",
+        "Name": "Nametag",
+        "Position": "0,0,38.91692",
+        "Tags": "nametag",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "WorldPanel",
+            "HorizontalAlign": "Center",
+            "LookAtCamera": true,
+            "PanelSize": "1024,512",
+            "RenderScale": 0,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Nametag",
+            "infoComponent": {
+              "_type": "component",
+              "go": "21152db4-5dce-42a2-9455-431e8a9c344e",
+              "component_type": "Info"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "luke.victorian_table"
+  ]
+}

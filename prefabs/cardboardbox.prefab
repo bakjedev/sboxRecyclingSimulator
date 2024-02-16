@@ -1,0 +1,92 @@
+{
+  "RootObject": {
+    "Id": "36b1909d-e98e-4579-9a7f-b3aae0a8389b",
+    "Name": "cardboardbox",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Info",
+        "Economy": {
+          "_type": "component",
+          "go": "36b1909d-e98e-4579-9a7f-b3aae0a8389b",
+          "component_type": "Economy"
+        },
+        "Grabbable": {
+          "_type": "component",
+          "go": "36b1909d-e98e-4579-9a7f-b3aae0a8389b",
+          "component_type": "Grabbable"
+        },
+        "Mortal": null,
+        "Team": "Recyclable"
+      },
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/props/trim_sheets/storage/storage_tray_02.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "ModelCollider",
+        "IsTrigger": false,
+        "Model": "models/props/trim_sheets/storage/storage_tray_02.vmdl",
+        "Static": false,
+        "Surface": "surfaces/plastic.hollow.surface"
+      },
+      {
+        "__type": "Grabbable",
+        "Grabbing": true,
+        "Tooltip": "Carboard box"
+      },
+      {
+        "__type": "Economy",
+        "price": 0.9
+      }
+    ],
+    "Children": [
+      {
+        "Id": "1efce506-4114-447c-bcb6-4378d8c0e019",
+        "Name": "Nametag",
+        "Position": "0,0,15.81952",
+        "Tags": "nametag",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "WorldPanel",
+            "HorizontalAlign": "Center",
+            "LookAtCamera": true,
+            "PanelSize": "1024,512",
+            "RenderScale": 0,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Nametag",
+            "infoComponent": {
+              "_type": "component",
+              "go": "36b1909d-e98e-4579-9a7f-b3aae0a8389b",
+              "component_type": "Info"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.storage_tray_02"
+  ]
+}

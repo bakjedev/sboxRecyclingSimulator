@@ -1,0 +1,874 @@
+{
+  "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "GameObjects": [
+    {
+      "Id": "234ee9f4-ce35-4068-ae18-bf7e55e56340",
+      "Name": "env",
+      "Position": "-66.6976,-84.4205,180.5461",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+          "Name": "Sun",
+          "Position": "0,0,0",
+          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "DirectionalLight",
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.94419,0.97767,1,1",
+              "Shadows": true,
+              "SkyColor": "0.2532,0.32006,0.35349,1"
+            }
+          ]
+        },
+        {
+          "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+          "Name": "2D Skybox",
+          "Position": "0,0,0",
+          "Tags": "skybox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkyBox2D",
+              "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "EnvmapProbe",
+              "Bounds": {
+                "Mins": "-512,-512,-512",
+                "Maxs": "512,512,512"
+              },
+              "Feathering": 0.02,
+              "Projection": "Sphere",
+              "Texture": "textures/cubemaps/default2.vtex",
+              "TintColor": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "cdde95bf-290e-44b6-a98e-d881885dcc59",
+      "Name": "world",
+      "Position": "-66.6976,-84.4205,180.5461",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "69ca937b-4091-4293-8af0-0c4b20c945f6",
+          "Name": "PlaneFlat",
+          "Position": "-65.64822,-89.1626,-105.5244",
+          "Scale": "10,10,1",
+          "Tags": "floor",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/terrain/grass/terrain_grass.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "PlaneCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "861e6b86-054d-4ca5-8093-87350e01e104",
+          "Name": "Barn",
+          "Position": "11.24821,-393.5252,-106.9448",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/props_farm/barn_loft001a.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "-64.48013,7.599998,50",
+              "IsTrigger": false,
+              "Scale": "1,320,100",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "df27abba-17a5-4ba6-bab5-e335f099156c",
+          "Name": "SpawnButton",
+          "Position": "167.7734,-56.86819,-72.08459",
+          "Tags": "spawnbutton",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/props/big_button/big_button.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,5",
+              "IsTrigger": false,
+              "Scale": "10,10,10",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "SpawnButton",
+              "Spawner": {
+                "_type": "component",
+                "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
+                "component_type": "ObjectSpawner"
+              }
+            }
+          ],
+          "Children": [
+            {
+              "Id": "ce6fe251-b4d5-4e73-a2b2-e3927c7312f2",
+              "Name": "ButtonTag",
+              "Position": "0,0,16.38687",
+              "Rotation": "0,0,1,-0.00000004371139",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "WorldPanel",
+                  "HorizontalAlign": "Center",
+                  "LookAtCamera": false,
+                  "PanelSize": "1500,1024",
+                  "RenderScale": 1,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "DescriptorTag",
+                  "Value": "Spawn"
+                }
+              ]
+            },
+            {
+              "Id": "27d50610-811b-4895-b23f-ac14bdd0cc61",
+              "Name": "Pillar",
+              "Position": "0,0,-16.61043",
+              "Scale": "0.1,0.1,0.7068182",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialGroup": null,
+                  "MaterialOverride": "materials/zombieworld/metalfloor01_pixel.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "31259895-2cfb-4662-abc2-9d49ad655216",
+          "Name": "SellButton",
+          "Position": "167.7734,-132.0219,-72.08459",
+          "Tags": "sellbutton",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/props/big_button/big_button.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,5",
+              "IsTrigger": false,
+              "Scale": "10,10,10",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "SellButton",
+              "EconomyManager": {
+                "_type": "component",
+                "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
+                "component_type": "EconomyManager"
+              },
+              "SpawnButton": {
+                "_type": "component",
+                "go": "df27abba-17a5-4ba6-bab5-e335f099156c",
+                "component_type": "SpawnButton"
+              }
+            }
+          ],
+          "Children": [
+            {
+              "Id": "5fc3b561-2c6d-4a02-8ec4-b6f6d3f1c3d3",
+              "Name": "ButtonTag",
+              "Position": "0,0,16.387",
+              "Rotation": "0,0,1,-0.00000004371139",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "WorldPanel",
+                  "HorizontalAlign": "Center",
+                  "LookAtCamera": false,
+                  "PanelSize": "1500,1024",
+                  "RenderScale": 1,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "DescriptorTag",
+                  "Value": "Sell"
+                }
+              ]
+            },
+            {
+              "Id": "a37fa91c-1346-4f7a-8dcc-74c20e4e5189",
+              "Name": "Pillar",
+              "Position": "0,0,-16.61043",
+              "Scale": "0.1,0.1,0.7068182",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialGroup": null,
+                  "MaterialOverride": "materials/zombieworld/metalfloor01_pixel.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "0d02b908-18af-4250-9a8d-98717fcd7ad0",
+          "Name": "fences",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Children": [
+            {
+              "Id": "8b997881-7f94-47e4-89a1-88eda2211a15",
+              "Name": "fence",
+              "Position": "182.0376,-272.2605,-105.4885",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "1113baf5-480a-47d6-b7bc-a74900da335e",
+              "Name": "fence",
+              "Position": "182.0376,-148.7018,-105.4885",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "886f16c4-ec32-466b-81e3-ffab9065bac2",
+              "Name": "fence",
+              "Position": "182.0376,-26.69322,-105.4885",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "c9c55a61-5c60-466d-98f6-2598d21b9bb4",
+              "Name": "fence",
+              "Position": "182.0376,99.48489,-105.4885",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "045bf5aa-df1d-4a9d-b77b-388d94852518",
+              "Name": "fence",
+              "Position": "119.9251,155.6125,-105.4885",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "aca0e8f2-dcfc-4197-aad6-04e6e0f0301c",
+              "Name": "fence",
+              "Position": "-4.622726,155.6124,-105.4885",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "c7a7e706-4d36-4999-a899-16b9491d75bd",
+              "Name": "fence",
+              "Position": "-127.8235,155.6124,-105.4885",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "4ff158a1-6b2c-4b53-9bae-c2466462f8de",
+              "Name": "fence",
+              "Position": "-252.2042,155.6124,-105.4885",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "5d17bd0c-5188-4785-b479-4a9fa44ba1ee",
+              "Name": "fence",
+              "Position": "-316.1708,94.1891,-105.4885",
+              "Rotation": "0,0,-0.9999999,0.0000001490116",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "9fdba1b8-2f40-4021-bd0f-bf7ccf36e506",
+              "Name": "fence",
+              "Position": "-316.1708,-26.54591,-105.4885",
+              "Rotation": "0,0,-0.9999999,0.0000001490116",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "1a672d40-879f-418c-a584-87c26068a667",
+              "Name": "fence",
+              "Position": "-316.1707,-151.1222,-105.4885",
+              "Rotation": "0,0,-0.9999999,0.0000001490116",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "739aca92-015f-4fb3-9a4d-977152cb55b7",
+              "Name": "fence",
+              "Position": "-316.1707,-272.61,-105.4885",
+              "Rotation": "0,0,-0.9999999,0.0000001490116",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "c8ab9da3-962e-4bb3-99cc-4e60eedbe6e6",
+              "Name": "fence",
+              "Position": "-255.5942,-330.0256,-105.4885",
+              "Rotation": "0,0,-0.7071069,-0.7071065",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "ff57c64f-94a8-4442-9848-c3c10c8eebc7",
+              "Name": "fence",
+              "Position": "-135.2391,-330.0256,-105.4885",
+              "Rotation": "0,0,-0.7071069,-0.7071065",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/props_mining/fence001_reference.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "d0c43cc3-a85e-4a4e-aa61-a0b9f27889ce",
+              "Name": "Blocker",
+              "Position": "178.8177,-94.21365,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "1,200,100",
+                  "Static": false,
+                  "Surface": null
+                }
+              ]
+            },
+            {
+              "Id": "7f495768-ea7f-4dc9-bb99-290bf44b5d5a",
+              "Name": "Blocker",
+              "Position": "-310.1245,-94.21365,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "1,500,100",
+                  "Static": false,
+                  "Surface": null
+                }
+              ]
+            },
+            {
+              "Id": "a46b7e59-500a-439e-b2b9-a4fbd9d4670b",
+              "Name": "Blocker",
+              "Position": "-235.2211,-327.0168,0",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "1,200,100",
+                  "Static": false,
+                  "Surface": null
+                }
+              ]
+            },
+            {
+              "Id": "312afc4d-13d0-41a1-a1a5-75b5590fd8fd",
+              "Name": "Blocker",
+              "Position": "-235.2212,153.8954,0",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "1,200,100",
+                  "Static": false,
+                  "Surface": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "2780e103-846a-4028-b072-9a8bb75b3173",
+          "Name": "forest",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Children": [
+            {
+              "Id": "3b0bc554-cd14-43c8-9f62-1113343927ae",
+              "Name": "tree_oak_medium_a",
+              "Position": "299.5304,18.31998,-113.7376",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/sbox_props/trees/oak/tree_oak_medium_a.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "f557b1d5-21e3-4aaf-a659-697990a3f02f",
+              "Name": "tree_oak_medium_a",
+              "Position": "-488.2473,255.9867,-135.9083",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/sbox_props/trees/oak/tree_oak_medium_a.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "a92e3e59-fdb7-4699-aa97-29d66239c597",
+              "Name": "tree_oak_big_b",
+              "Position": "2.480499,265.1648,-81.40144",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/sbox_props/trees/oak/tree_oak_big_b.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            },
+            {
+              "Id": "bd92f22c-836a-48de-b24e-b1076b1fa91e",
+              "Name": "tree_oak_big_b",
+              "Position": "-439.8993,-321.8531,-76.76704",
+              "Rotation": "0,0,0.6087614,0.7933534",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Prop",
+                  "Health": 0,
+                  "IsStatic": true,
+                  "Model": "models/sbox_props/trees/oak/tree_oak_big_b.vmdl",
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "be518f3f-77f6-494d-9932-0581ac6fdd74",
+          "Name": "Door",
+          "Position": "-3.578712,-329.1246,-105.6433",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Tags": "doorbutton",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01b.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "DoorButton",
+              "Menu": {
+                "_type": "component",
+                "go": "f5766392-4253-48e4-b6af-9bfac00bae4e",
+                "component_type": "Menu"
+              }
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,-23,50",
+              "IsTrigger": false,
+              "Scale": "1,50,100",
+              "Static": false,
+              "Surface": null
+            }
+          ],
+          "Children": [
+            {
+              "Id": "5fdb79f8-d986-4ff8-ba61-30b29a45b70c",
+              "Name": "DescriptorTag",
+              "Position": "2.57966,-23,52.91235",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "WorldPanel",
+                  "HorizontalAlign": "Center",
+                  "LookAtCamera": false,
+                  "PanelSize": "2000,2000",
+                  "RenderScale": 1,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "DescriptorTag",
+                  "Value": "Upgrades"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "1689e191-edd7-4b4c-ac69-a0f7700d154a",
+      "Name": "rigidplayer",
+      "Position": "-123.8791,-158.423,151.3919",
+      "Rotation": "0,0,1,0.0000001947072",
+      "Tags": "player",
+      "Enabled": true,
+      "__Prefab": "prefabs/rigidplayer.prefab"
+    },
+    {
+      "Id": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
+      "Name": "GameManager",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ObjectSpawner",
+          "cardboardBox": {
+            "_type": "gameobject",
+            "prefab": "prefabs/cardboardbox.prefab"
+          },
+          "garbageBag": {
+            "_type": "gameobject",
+            "prefab": "prefabs/garbagebag.prefab"
+          },
+          "spawnPos": "-78.64021,-278.479,101.6794",
+          "table": {
+            "_type": "gameobject",
+            "prefab": "prefabs/table.prefab"
+          }
+        },
+        {
+          "__type": "EconomyManager",
+          "Spawner": {
+            "_type": "component",
+            "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
+            "component_type": "ObjectSpawner"
+          },
+          "GarbageContainer": {
+            "_type": "gameobject",
+            "prefab": "prefabs/garbagecontainer.prefab"
+          },
+          "Positions": [
+            "-320,-20,75",
+            "-320,-170,75",
+            "-320,-320,75"
+          ],
+          "RecyclableContainer": {
+            "_type": "gameobject",
+            "prefab": "prefabs/recyclablecontainer.prefab"
+          },
+          "WoodContainer": {
+            "_type": "gameobject",
+            "prefab": "prefabs/woodcontainer.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "9efbeaa9-d77e-4f1a-9f75-4adf769372bf",
+      "Name": "UI",
+      "Position": "-40.62312,-499.852,78.2328",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "36d81cc1-b01d-4559-ae5d-30000d355206",
+          "Name": "HUD",
+          "Position": "-39.0839,228.5292,96.6163",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ScreenPanel",
+              "AutoScreenScale": true,
+              "Opacity": 1,
+              "Scale": 1,
+              "ZIndex": 100
+            },
+            {
+              "__type": "HUD",
+              "EconomyManager": {
+                "_type": "component",
+                "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
+                "component_type": "EconomyManager"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "f5766392-4253-48e4-b6af-9bfac00bae4e",
+          "Name": "Menu",
+          "Position": "-40.62312,-499.852,78.2328",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ScreenPanel",
+              "AutoScreenScale": true,
+              "Opacity": 1,
+              "Scale": 1,
+              "ZIndex": 100
+            },
+            {
+              "__type": "Menu",
+              "EconomyManager": {
+                "_type": "component",
+                "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
+                "component_type": "EconomyManager"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "Main",
+  "Description": "",
+  "LastSaved": "2024-02-16T15:54:38.6392719\u002B01:00",
+  "__references": [
+    "facepunch.big_button",
+    "facepunch.tree_oak_big_b",
+    "facepunch.tree_oak_medium_a",
+    "facepunch.wooden_door_01b",
+    "kvien.metalfloor01_pixel",
+    "rustextended.terrain_grass",
+    "tfassets.barn_loft001a",
+    "tfassets.fence001_reference"
+  ]
+}

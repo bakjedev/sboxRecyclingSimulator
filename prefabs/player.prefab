@@ -1,0 +1,121 @@
+{
+  "RootObject": {
+    "Id": "f328f708-2855-4300-8093-030849d74189",
+    "Name": "player",
+    "Tags": "player",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 10,
+        "StepHeight": 18
+      },
+      {
+        "__type": "Player",
+        "Camera": {
+          "_type": "gameobject",
+          "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
+        },
+        "characterController": {
+          "_type": "component",
+          "go": "f328f708-2855-4300-8093-030849d74189",
+          "component_type": "CharacterController"
+        },
+        "EyePosition": "0,0,64",
+        "JumpStrength": 250,
+        "Speed": 300,
+        "WalkSpeed": 150
+      },
+      {
+        "__type": "Info",
+        "HealthRegen": 0.5,
+        "HealthRegenDelay": 3,
+        "HealthRegenInterval": 0.2,
+        "MaxHealth": 100,
+        "Team": "Player"
+      },
+      {
+        "__type": "Grabber",
+        "Camera": {
+          "_type": "gameobject",
+          "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
+        },
+        "Range": 100
+      }
+    ],
+    "Children": [
+      {
+        "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+        "Name": "Camera",
+        "Position": "0,0,64",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 95,
+            "IsMainCamera": true,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 1
+          },
+          {
+            "__type": "Bloom",
+            "BloomColor": {
+              "color": [
+                {
+                  "c": "1,1,1,1"
+                },
+                {
+                  "t": 1,
+                  "c": "1,1,1,1"
+                }
+              ],
+              "alpha": []
+            },
+            "BloomCurve": [
+              {
+                "y": 0.5
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "Mode": "Additive",
+            "Strength": 0.5,
+            "Threshold": 0.5,
+            "ThresholdWidth": 0.5
+          },
+          {
+            "__type": "Tonemapping",
+            "ExposureCompensation": 0,
+            "MaximumExposure": 2,
+            "MinimumExposure": 1,
+            "Rate": 1
+          },
+          {
+            "__type": "Sharpen",
+            "Scale": 0.2
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

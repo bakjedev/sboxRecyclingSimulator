@@ -1,0 +1,13 @@
+Nametag {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 20px;
+	font-weight: bolder;
+	transform: translate(-50%, -50%);
+	text-stroke: 3px black;
+	background-color: rgb(0.16, 0.16, 0.16, 0.67);
+	padding: 10px;
+	border-radius: 25px;
+	font-family: "Roboto Mono";
+}

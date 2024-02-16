@@ -1,0 +1,92 @@
+{
+  "RootObject": {
+    "Id": "42127bee-7a66-492f-a41f-de4953791a08",
+    "Name": "garbagebag",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Info",
+        "Economy": {
+          "_type": "component",
+          "go": "42127bee-7a66-492f-a41f-de4953791a08",
+          "component_type": "Economy"
+        },
+        "Grabbable": {
+          "_type": "component",
+          "go": "42127bee-7a66-492f-a41f-de4953791a08",
+          "component_type": "Grabbable"
+        },
+        "Mortal": null,
+        "Team": "Garbage"
+      },
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/sbox_props/binbags/binbag_a1.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "ModelCollider",
+        "IsTrigger": false,
+        "Model": "models/sbox_props/binbags/binbag_a1.vmdl",
+        "Static": false,
+        "Surface": "surfaces/plastic.hollow.surface"
+      },
+      {
+        "__type": "Economy",
+        "price": 1.2
+      },
+      {
+        "__type": "Grabbable",
+        "Grabbing": true,
+        "Tooltip": "Garbage bag"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "5822730d-976a-4809-b324-54832029c4cf",
+        "Name": "Nametag",
+        "Position": "0,0,30.96811",
+        "Tags": "nametag",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "WorldPanel",
+            "HorizontalAlign": "Center",
+            "LookAtCamera": true,
+            "PanelSize": "1024,512",
+            "RenderScale": 0,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Nametag",
+            "infoComponent": {
+              "_type": "component",
+              "go": "42127bee-7a66-492f-a41f-de4953791a08",
+              "component_type": "Info"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.binbag_a1"
+  ]
+}

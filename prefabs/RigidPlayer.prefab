@@ -1,0 +1,107 @@
+{
+  "RootObject": {
+    "Id": "1b6c9b59-fe67-4a11-b09b-bd94867e3de2",
+    "Name": "rigidplayer",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "Pitch": true,
+          "Roll": true
+        },
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "CapsuleCollider",
+        "End": "0,0,48",
+        "IsTrigger": false,
+        "Radius": 20,
+        "Start": "0,0,0",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "RigidPlayer",
+        "body": {
+          "_type": "component",
+          "go": "1b6c9b59-fe67-4a11-b09b-bd94867e3de2",
+          "component_type": "Rigidbody"
+        },
+        "Camera": {
+          "_type": "gameobject",
+          "go": "6ffdf07b-485e-4db4-a246-991680389cc8"
+        },
+        "collider": {
+          "_type": "component",
+          "go": "1b6c9b59-fe67-4a11-b09b-bd94867e3de2",
+          "component_type": "CapsuleCollider"
+        },
+        "EyePosition": "0,0,48",
+        "JumpStrength": 230,
+        "Speed": 300,
+        "WalkSpeed": 150
+      },
+      {
+        "__type": "Grabber",
+        "Camera": {
+          "_type": "gameobject",
+          "go": "6ffdf07b-485e-4db4-a246-991680389cc8"
+        },
+        "Range": 100
+      },
+      {
+        "__type": "Info",
+        "Economy": null,
+        "Grabbable": null,
+        "Mortal": {
+          "_type": "component",
+          "go": "1b6c9b59-fe67-4a11-b09b-bd94867e3de2",
+          "component_type": "Mortal"
+        },
+        "Team": "Player"
+      },
+      {
+        "__type": "Mortal",
+        "HealthRegen": 0.5,
+        "HealthRegenDelay": 3,
+        "MaxHealth": 100
+      }
+    ],
+    "Children": [
+      {
+        "Id": "6ffdf07b-485e-4db4-a246-991680389cc8",
+        "Name": "Camera",
+        "Tags": "maincamera",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 95,
+            "IsMainCamera": true,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 10
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

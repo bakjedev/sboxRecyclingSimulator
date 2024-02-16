@@ -1,0 +1,14 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@Value
+</root>
+
+@code
+{
+	[Property, TextArea] public string Value { get; set; } = "None";
+
+	protected override int BuildHash() => System.HashCode.Combine(Value);
+}

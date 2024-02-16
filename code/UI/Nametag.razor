@@ -1,0 +1,28 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="nametag">
+		@if (state == 1)
+		{
+			<p style="color:green">@infoComponent.Grabbable.Tooltip</p>
+		} else if (state == 2)
+		{
+			<p style="color:orange">@infoComponent.Grabbable.Tooltip</p>
+		} else
+		{
+			<p style="color:white">@infoComponent.Grabbable.Tooltip</p>
+		}
+
+	</div>
+</root>
+
+@code
+{
+	[Property]
+	public Info infoComponent { get; set; }
+	public int state = 0;
+
+	protected override int BuildHash() => System.HashCode.Combine(infoComponent.Grabbable.Tooltip, state);
+}
