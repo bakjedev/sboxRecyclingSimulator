@@ -115,7 +115,7 @@
           "Id": "df27abba-17a5-4ba6-bab5-e335f099156c",
           "Name": "SpawnButton",
           "Position": "167.7734,-56.86819,-72.08459",
-          "Tags": "spawnbutton",
+          "Tags": "button",
           "Enabled": true,
           "Components": [
             {
@@ -136,12 +136,7 @@
               "Surface": null
             },
             {
-              "__type": "SpawnButton",
-              "Spawner": {
-                "_type": "component",
-                "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
-                "component_type": "ObjectSpawner"
-              }
+              "__type": "Button"
             }
           ],
           "Children": [
@@ -190,7 +185,7 @@
           "Id": "31259895-2cfb-4662-abc2-9d49ad655216",
           "Name": "SellButton",
           "Position": "167.7734,-132.0219,-72.08459",
-          "Tags": "sellbutton",
+          "Tags": "button",
           "Enabled": true,
           "Components": [
             {
@@ -211,17 +206,7 @@
               "Surface": null
             },
             {
-              "__type": "SellButton",
-              "EconomyManager": {
-                "_type": "component",
-                "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
-                "component_type": "EconomyManager"
-              },
-              "SpawnButton": {
-                "_type": "component",
-                "go": "df27abba-17a5-4ba6-bab5-e335f099156c",
-                "component_type": "SpawnButton"
-              }
+              "__type": "Button"
             }
           ],
           "Children": [
@@ -757,11 +742,6 @@
         },
         {
           "__type": "EconomyManager",
-          "Spawner": {
-            "_type": "component",
-            "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
-            "component_type": "ObjectSpawner"
-          },
           "GarbageContainer": {
             "_type": "gameobject",
             "prefab": "prefabs/garbagecontainer.prefab"
@@ -774,6 +754,21 @@
           "RecyclableContainer": {
             "_type": "gameobject",
             "prefab": "prefabs/recyclablecontainer.prefab"
+          },
+          "SellButton": {
+            "_type": "component",
+            "go": "31259895-2cfb-4662-abc2-9d49ad655216",
+            "component_type": "Button"
+          },
+          "SpawnButton": {
+            "_type": "component",
+            "go": "df27abba-17a5-4ba6-bab5-e335f099156c",
+            "component_type": "Button"
+          },
+          "Spawner": {
+            "_type": "component",
+            "go": "cf18e7ac-867e-42d0-b3d7-c6f6fa4d1fd9",
+            "component_type": "ObjectSpawner"
           },
           "WoodContainer": {
             "_type": "gameobject",
@@ -860,7 +855,7 @@
   },
   "Title": "Main",
   "Description": "",
-  "LastSaved": "2024-02-16T15:54:38.6392719\u002B01:00",
+  "LastSaved": "2024-02-17T16:25:40.5512514\u002B01:00",
   "__references": [
     "facepunch.big_button",
     "facepunch.tree_oak_big_b",

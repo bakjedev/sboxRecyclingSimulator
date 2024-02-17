@@ -69,13 +69,13 @@ public sealed class RigidPlayer : Component
 		}
 		body.ApplyForce( wishVel * acceleration );
 
-		if ( Input.Pressed( "Jump" ) && OnGround() )
+		if ( (Input.Pressed( "Jump" ) || Input.MouseWheel.y != 0) && OnGround() )
 		{
 			// setting z velocity to 0 to make jumps on slopes not retarded
 			body.Velocity = body.Velocity.WithZ( 0 );
 			body.ApplyImpulse( Vector3.Up * JumpStrength * 4000 );
 		}
-
+		
 		// limit velocity
 		var maxSpeed = Input.Down( "Walk" ) ? WalkSpeed : Speed;
 

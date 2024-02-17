@@ -1,4 +1,5 @@
 using Sandbox;
+using Sandbox.UI;
 
 public sealed class DoorButton : Component
 {
