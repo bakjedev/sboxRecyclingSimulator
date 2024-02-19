@@ -13,6 +13,9 @@ public sealed class EconomyManager : Component
 	[Property]
 	[Category("References")]
 	public GameObject RecyclableContainer { get; set; }
+	[Property]
+	[Category("References")]
+	public GameObject ReturnableContainer { get; set; }
 	
 	
 	[Property]
@@ -30,6 +33,8 @@ public sealed class EconomyManager : Component
 	List<Vector3> Positions { get; set; }
 	
 	public List<GameObject> Objects = new();
+	private int objectsIndex = 0;
+	public List<GameObject> BuyableObjects = new();
 	public float money = 0f;
 	
 	protected override void DrawGizmos()
@@ -43,7 +48,7 @@ public sealed class EconomyManager : Component
 	
 	public void SellSellableGarbages(bool destroyNonSellables)
 	{
-		bool failedToSellAll = false;
+		bool soldAll = true;
 		foreach ( GameObject obj in Spawner.objects )
 		{
 			var infoComponent = obj.Components.Get<Info>();
@@ -51,50 +56,69 @@ public sealed class EconomyManager : Component
 			{
 				if ( infoComponent.Economy.IsValid )
 				{
-					if ( infoComponent.Economy.shouldSell )
+					if ( infoComponent.Economy.shouldDestroy )
 					{
-						money += infoComponent.Economy.price;
-						obj.Destroy();
-					} 
-					else if (destroyNonSellables)
-					{
-						failedToSellAll = true;
+						if ( infoComponent.Economy.correctContainer )
+						{
+							money += infoComponent.Economy.price;
+						}
+						else if (!infoComponent.Economy.returned)
+						{
+							soldAll = false;
+						}
+
+						
 						obj.Destroy();
 					}
 				}
 			}
 		}
-		if ( failedToSellAll )
+
+		if ( !soldAll )
 		{
 			SoundEvent wrongSound = Cloud.SoundEvent( "dopamine.airlock_alarm" );
 			wrongSound.Volume = .1f;
 			Sound.Play( wrongSound, Spawner.Transform.Position );
-		} else
+		}
+		else
 		{
 			SoundEvent correctSound = Cloud.SoundEvent( "exorealms.66d09d44dcbf5e0c" );
 			correctSound.Volume = .1f;
 			Sound.Play( correctSound, Spawner.Transform.Position );
 		}
 	}
+	
 
 	protected override void OnStart()
 	{
-		SpawnObject(GarbageContainer.Clone(), Positions[0] );
-		SpawnObject(WoodContainer.Clone(), Positions[1] );
-		SpawnObject(RecyclableContainer.Clone(), Positions[2] );
+		SpawnObject(GarbageContainer.Clone(), false );
+		SpawnObject(WoodContainer.Clone(), false );
+		SpawnObject(ReturnableContainer.Clone(), false );
 		
+		BuyableObjects.Add( RecyclableContainer.Clone());
 		
 		SellButton.onPressed += OnSellButton;
 		SpawnButton.onPressed += OnSpawnButton;
 	}
 
 	
-	private void SpawnObject(GameObject obj, Vector3 pos)
+	public void SpawnObject(GameObject obj, bool removeBuyableObject)
 	{
-		obj.Transform.Position = pos;
-		Objects.Add( obj );
-		obj.NetworkSpawn();
+		if ( removeBuyableObject )
+		{
+			BuyableObjects.Remove(obj);
+		}
+		
+		obj.Transform.Position = Positions[objectsIndex];
+		var test = Transform.Position.x > 0;
+		var newAngles = Transform.Rotation.Angles();
+		newAngles.yaw = test ? 0 : 180;
+		Transform.Rotation = newAngles.ToRotation();
+		objectsIndex = (objectsIndex + 1) % Positions.Count;
+		
+		Objects.Add(obj);
 	}
+	
 
 	private void OnSellButton()
 	{

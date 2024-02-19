@@ -27,7 +27,12 @@ public enum InfoType
 	/// Recyclable objects
 	/// </summary>
 	[Icon( "recycling" )]
-	Recyclable
+	Recyclable,
+	/// <summary>
+	/// Dont have a container for it yet
+	/// </summary>
+	[Icon( "keyboard_return" )]
+	Returnable
 }
 [Icon( "info" )]
 public sealed class Info : Component

@@ -46,7 +46,32 @@ Menu {
 			}
 
 			& .shop {
-				
+				overflow: scroll;
+				flex-direction: column;
+				font-size: 24px;
+				top: 0px;
+
+				& .item {
+					margin: 10px;
+					min-height: 40px;
+
+
+					& .name {
+						justify-content: center;
+						width: 500px;
+					}
+
+					& .price {
+						justify-content: center;
+						width: 300px;
+					}
+
+					& .button {
+						justify-content: center;
+						width: 300px;
+						cursor: pointer;
+					}
+				}
 			}
 
 			& .upgrades {

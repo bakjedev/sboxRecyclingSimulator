@@ -16,21 +16,31 @@
 			{
 				<p class="title">Welcome to the shop</p>
 				<div class="shop">
-					
+					@foreach ( GameObject obj in EconomyManager.BuyableObjects )
+					{
+						var containerObj = obj.Components.Get<Container>();
+						if (containerObj is null) break;
+
+						<div class="item">
+							<span class="name">@obj.Name</span>
+							<span class="price">💶@containerObj.cost.ToString("0.00")</span>
+							<span class="button" onclick="@( () => SpawnBuyableObject(obj, containerObj.cost) )">Buy</span>
+						</div>
+					}
 				</div>
 			}
 			else if (page == "Upgrades")
 			{
 				<p class="title">Upgrades currently do nothing</p>
 				<div class="upgrades">
-					@foreach(GameObject obj in EconomyManager.Objects)
+					@foreach ( GameObject obj in EconomyManager.Objects )
 					{
 						var containerObj = obj.Components.Get<Container>();
-						if (containerObj is null) break;
+						if ( containerObj is null ) break;
 
 						<div class="item">
 							<span class="name">@obj.Name @containerObj.level</span>
-							<span class="price">💶@containerObj.upgradeCost.ToString("0.00")</span>
+							<span class="price">💶@containerObj.upgradeCost.ToString( "0.00" )</span>
 							<span class="button" onclick="@( () => UpgradeContainer( containerObj ) )">Upgrade</span>
 						</div>
 					}
@@ -87,6 +97,14 @@
 		if (EconomyManager.money >= container.upgradeCost) {
 			EconomyManager.money -= container.upgradeCost;
 			container.Upgrade();
+		}
+	}
+	private void SpawnBuyableObject(GameObject obj, float price)
+	{
+		if ( EconomyManager.money >= price )
+		{
+			EconomyManager.money -= price;
+			EconomyManager.SpawnObject( obj, true );
 		}
 	}
 

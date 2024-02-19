@@ -7,5 +7,7 @@ public sealed class Economy : Component
 	/// </summary>
 	[Property]
 	public float price { get; set; } = 1f;
-	public bool shouldSell { get; set; } = false;
+	public bool shouldDestroy { get; set; } = true;
+	public bool correctContainer { get; set; } = false;
+	public bool returned { get; set; } = false;
 }

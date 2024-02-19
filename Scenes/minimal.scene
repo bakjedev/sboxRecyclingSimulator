@@ -515,7 +515,7 @@
                   "__type": "BoxCollider",
                   "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "1,200,100",
+                  "Scale": "1,493.521,103.3601",
                   "Static": false,
                   "Surface": null
                 }
@@ -749,11 +749,16 @@
           "Positions": [
             "-320,-20,75",
             "-320,-170,75",
-            "-320,-320,75"
+            "-320,-320,75",
+            "45,-15,75"
           ],
           "RecyclableContainer": {
             "_type": "gameobject",
             "prefab": "prefabs/recyclablecontainer.prefab"
+          },
+          "ReturnableContainer": {
+            "_type": "gameobject",
+            "prefab": "prefabs/returncontainer.prefab"
           },
           "SellButton": {
             "_type": "component",
@@ -855,7 +860,7 @@
   },
   "Title": "Main",
   "Description": "",
-  "LastSaved": "2024-02-17T16:25:40.5512514\u002B01:00",
+  "LastSaved": "2024-02-19T21:04:00.40051\u002B01:00",
   "__references": [
     "facepunch.big_button",
     "facepunch.tree_oak_big_b",
